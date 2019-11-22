@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Главное меню";
+}
+
+<h2>Main</h2>
+<div>
+    @Html.ActionLink("Просмотр анкет", "ShowCandidates", "Common")
+</div><div>
+    @Html.ActionLink("Просмотр вакансий", "ShowVacancies", "Common")
+</div><div>
+    @Html.ActionLink("Просмотр пользователей", "ShowUsers", "Admin")
+</div>

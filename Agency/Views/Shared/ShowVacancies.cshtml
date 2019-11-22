@@ -1,0 +1,28 @@
+﻿@model Agency.Models.VacancyListViewModel
+@using Agency.Extensions;
+@using Agency.Models;
+@using Agency.Models.Filters
+
+
+@{
+    ViewBag.Title = "Список вакансий";
+}
+
+<h2>Список вакансий</h2>
+<div style="padding: 20px;">
+    @Html.Partial("VacancyFilter", new VacancyFilter())
+</div>
+<p>
+    @if (Model.Role == Role.Employer)
+    {
+        @Html.ActionLink("Create New", "Createvacancy", "Employer")
+    }
+    </p>
+<div>
+    @Html.Partial("VacanciesTable", Model)
+</div>
+<div>
+    @Html.ActionLink("Назад", "Redirect", "Common")
+</div>
+
+
