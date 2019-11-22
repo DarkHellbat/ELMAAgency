@@ -188,10 +188,7 @@ namespace Agency.Controllers
                 
                 var user = new User { UserName = model.Email,  Password = model.Password, Status = Status.Active, Role = model.Role}; 
                 var result = await UserManager.CreateAsync(user, model.Password);
-                var r = await UserManager.AddToRoleAsync(user.Id, model.Role.ToString()); 
-
-                //try
-                //{
+                
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
